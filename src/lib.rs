@@ -31,3 +31,21 @@ enum Filter {
     Active,
     Completed,
 }
+
+// Messages (event signalling)
+enum Msg {
+    // -- Commands -- //
+    CreateTodo,
+    CheckOrUncheckAll,
+    ClearCompleted,
+    ToggleTodo(Ulid),
+    SelectTodo(Ulid),
+    RemoveTodo(Ulid),
+    SaveSelectedTodo,
+    ClearCompleted,
+
+    // -- Events -- //
+    NewTodoTitleChanged(String),
+    SelectedTodoTitleChanged(String),
+    UrlChanged(subs::UrlChanged),
+}
