@@ -49,3 +49,44 @@ enum Msg {
     SelectedTodoTitleChanged(String),
     UrlChanged(subs::UrlChanged),
 }
+
+// Update
+fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
+    match msg {
+        // -- Commands -- //
+        Msg::CreateTodo => {
+            log!("CreateTodo");
+        }
+        Msg::CheckOrUncheckAll => {
+            log!("CheckOrUncheckAll");
+        }
+        Msg::ClearCompleted => {
+            log!("ClearCompleted");
+        }
+        Msg::ToggleTodo => {
+            log!("ToggleTodo");
+        }
+        Msg::SelectTodo => {
+            log!("SelectTodo");
+        }
+        Msg::RemoveTodo => {
+            log!("RemoveTodo");
+        }
+        Msg::SaveSelectedTodo => {
+            log!("SaveSelectedTodo");
+        }
+        Msg::ClearCompleted => {
+            log!("ClearCompleted");
+        }
+        // -- Events -- //
+        Msg::UrlChanged(subs::UrlChanged(url)) => {
+            log!("UrlChanged", url);
+        }
+        Msg::NewTodoTitleChanged(title) => {
+            log!("NewTodoTitleChanged", title);
+        }
+        Msg::SelectedTodoTitleChanged(title) => {
+            log!("SelectedTodoTitleChanged", title);
+        }
+    }
+}
